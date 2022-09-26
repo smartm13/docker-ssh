@@ -3,7 +3,7 @@ log     = bunyan.createLogger name: 'multiContainerAuthLDAP'
 env     = require '../env'
 child_process = require('child_process')
 
-ldap_check = (user, pass) -> `child_process.spawnSync('python', [ 'amdocs_ldap.py', user, pass ], { timeout: 5000 }).stdout.toString() != 'Failed\n'`
+ldap_check = (user, pass) -> `child_process.spawnSync('python', [ '/src/auth/org_ldap.py', user, pass ], { timeout: 10000 }).stdout.toString() == 'Success\n'`
 
 #
 module.exports = (session) ->
