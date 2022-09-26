@@ -6,7 +6,7 @@ ADD . .
 
 RUN apk --update add python make g++ nodejs \
   && npm install \
-  && apk del make gcc g++ python \
+  && apk del make gcc g++ \
   && rm -rf /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp
 
 
