@@ -4,8 +4,9 @@ FROM mhart/alpine-node:6.2.0
 WORKDIR /src
 ADD . .
 
-RUN apk --update add python make g++ nodejs \
+RUN apk --update add python make g++ nodejs py-pip musl-dev python-dev openldap-dev \
   && npm install \
+  && pip install python-ldap==2.5.2
   && apk del make gcc g++ \
   && rm -rf /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp
 
