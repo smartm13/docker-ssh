@@ -40,7 +40,7 @@ sshServer = new ssh2.Server options, (client, info) ->
   session.sessdata.username = ""
   session.sessdata.container = ""
 
-  if authMechanism=="multiContainerAuth"
+  if authMechanism == "multiContainerAuth" or authMechanism == "multiContainerAuthLDAP"
     client.on 'authentication', authenticationHandler(session)
 
     client.on 'ready', -> client.on('session', session.myhandler())
