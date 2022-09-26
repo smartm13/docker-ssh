@@ -5,4 +5,5 @@ module.exports = (authType) ->
     when 'multiUser' then require './multiUserAuth'
     when 'publicKey' then require './publicKeyAuth'
     when 'multiContainerAuth' then require './multiContainerAuth'
+    when 'multiContainerAuthLDAP' then require './multiContainerAuthLDAP'
     else null
