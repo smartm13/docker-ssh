@@ -8,7 +8,7 @@ spaces = (text, length) ->(' ' for i in [0..length-text.length]).join ''
 header = (container) ->
   "\r\n" +
   " ###############################################################\r\n" +
-  " ## Docker SSH ~ Because every container should be accessible ##\r\n" +
+  " ## Its YOUR PERSONAL ENV :::: Kindly use UNIQUE ports if any ##\r\n" +
   " ###############################################################\r\n" +
   " ## container | #{container}#{spaces container, 45}##\r\n" +
   " ###############################################################\r\n" +
