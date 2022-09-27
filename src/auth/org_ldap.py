@@ -10,13 +10,8 @@ def get_user(username, password, domain="ORGG.com", ldap_uri="ldap://raappdc1.co
         connect.protocol_version = 3
         connect.set_option(ldap.OPT_REFERRALS, 0)
         connect.simple_bind_s(email, password)
-        base_dn = "DC=corp,DC="+domain.split('.')[0]+",DC=com"
-        query = "(&(objectCategory=user)(sAMAccountName=" + username + "))"
-        results = connect.search_s(base_dn, ldap.SCOPE_SUBTREE, query)
-        if results:
-            return results[0][1]
-        else:
-            return None
+        connect.unbind_s()
+        return True
     except ldap.LDAPError:
         return None
 
