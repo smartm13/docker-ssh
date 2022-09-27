@@ -108,7 +108,7 @@ module.exports = (container, shell) ->
                 closeChannel()
 
               stream.write 'export TERM=linux;\n'
-            stream.write 'export PS1="['+container+'] ${debian_chroot:+($debian_chroot)}\\u@\\h:\\w\\$ ";\n\n'
+              stream.write 'export PS1="['+container+'] ${debian_chroot:+($debian_chroot)}\\u@\\h:\\w\\$ ";\n\n'
 
               channel.on 'data', (data) ->
                 stream.write data
